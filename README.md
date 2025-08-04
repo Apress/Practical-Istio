@@ -1,6 +1,6 @@
 # Apress Source Code
 
-This repository accompanies [*Practical Istio*](https://www.link.springer.com/book/10.1007/979-8-8688-1573-7) by Prashanth Josyula (Apress, 2025).
+This repository accompanies [*Practical Istio*](https://www.link.springer.com/book/10.1007/979-8-8688-1573-7) by Prashanth Josyula, Karanbir Singh, and Anupam Mehta (Apress, 2025).
 
 [comment]: #cover
 ![Cover image](979-8-8688-1572-0.jpg)
