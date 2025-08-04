@@ -1,0 +1,29 @@
+# Initial DestinationRule (Pre-Switch)
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: recommendation-destinationrule
+spec:
+  host: recommendation-service
+  trafficPolicy:
+    loadBalancer:
+      simple: LEAST_REQUEST
+    connectionPool:
+      tcp:
+        maxConnections: 100
+      http:
+        http1MaxPendingRequests: 25
+        maxRequestsPerConnection: 10
+    outlierDetection:
+      consecutive5xxErrors: 5
+      interval: 30s
+      baseEjectionTime: 30s
+  subsets:
+  - name: stable
+    labels:
+      version: v1
+      env: v1
+  - name: canary
+    labels:
+      version: v2
+      env: v2

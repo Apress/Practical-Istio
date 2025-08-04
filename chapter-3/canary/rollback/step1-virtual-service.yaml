@@ -1,0 +1,18 @@
+# Step 1: Immediate Traffic Switch VirtualService
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: recommendation-virtualservice
+spec:
+  hosts:
+  - recommendation
+  http:
+  - route:
+    - destination:
+        host: recommendation
+        subset: v1    # Immediately route all traffic back to v1 version
+    retries:
+      attempts: 3
+      perTryTimeout: "2s"
+      retryOn: "connect-failure,refused-stream,unavailable,cancelled,retriable-status-codes"
+    timeout: "3s"      # Strict timeout to prevent hanging requests

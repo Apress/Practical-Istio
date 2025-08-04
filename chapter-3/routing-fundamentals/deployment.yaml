@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendation-deployment-v1
+  labels:
+    app: recommendation
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recommendation
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: recommendation
+        version: v1
+    spec:
+      containers:
+        - name: recommendation
+          image: prashanthchaitanya715/recommendation:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendation-deployment-v2
+  labels:
+    app: recommendation
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: recommendation
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: recommendation
+        version: v2
+    spec:
+      containers:
+        - name: recommendation
+          image: prashanthchaitanya715/recommendation:v2
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

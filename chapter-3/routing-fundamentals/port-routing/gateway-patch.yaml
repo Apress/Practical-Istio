@@ -1,0 +1,27 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  components:
+    ingressGateways:
+      - namespace: istio-system
+        name: istio-ingressgateway
+        enabled: true
+        k8s:
+          service:
+            ports:
+              - port: 80
+                targetPort: 8080
+                name: http2
+                protocol: TCP
+              - port: 443
+                targetPort: 8443
+                name: https
+                protocol: TCP
+              - port: 9001
+                targetPort: 9001
+                name: http2-9001
+                protocol: TCP
+              - port: 9002
+                targetPort: 9002
+                name: http2-9002
+                protocol: TCP

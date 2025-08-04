@@ -1,0 +1,24 @@
+# Kubernetes Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: recommendation-service
+  labels:
+    app: recommendation
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  - port: 9001
+    targetPort: 8080
+    protocol: TCP
+    name: http-9001
+  - port: 9002
+    targetPort: 8080
+    protocol: TCP
+    name: http-9002
+  selector:
+    app: recommendation

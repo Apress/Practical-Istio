@@ -1,0 +1,29 @@
+# virtual-service-header-based.yaml
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: recommendation-virtualservice
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - recommendation-gateway
+  http:
+  - match:
+    - method:
+        exact: GET
+      uri:
+        prefix: "/recommendations"
+    route:
+    - destination:
+        host: recommendation-service
+        subset: v1
+  - match:
+    - method:
+        exact: POST
+      uri:
+        prefix: "/recommendations"
+    route:
+    - destination:
+        host: recommendation-service
+        subset: v2

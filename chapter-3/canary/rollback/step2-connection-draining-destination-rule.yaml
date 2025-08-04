@@ -1,0 +1,23 @@
+# Step 2: Connection Draining DestinationRule
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: recommendation-destinationrule
+spec:
+  host: recommendation
+  subsets:
+  - name: v2
+    labels:
+      version: v2
+      env: v2
+    trafficPolicy:
+      connectionPool:
+        tcp:
+          maxConnections: 0     # Prevent new TCP connections
+        http:
+          http2MaxRequests: 0        # Prevent new HTTP requests
+          maxRequestsPerConnection: 1
+      outlierDetection:
+        consecutive5xxErrors: 1
+        interval: 1s
+        baseEjectionTime: 1h    # Keep ejected for a long time

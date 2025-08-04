@@ -1,0 +1,32 @@
+# 1. Blue Deployment (Current Production Version)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendation-blue
+  labels:
+    app: recommendation
+    version: blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recommendation
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: recommendation
+        version: blue
+    spec:
+      containers:
+        - name: recommendation
+          image: prashanthchaitanya715/recommendation:v1
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"

@@ -1,0 +1,16 @@
+# 6. Initial VirtualService (100% traffic to blue)
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: recommendation-virtualservice
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - recommendation-gateway
+  http:
+    - route:
+        - destination:
+            host: recommendation-service
+            subset: blue
+          weight: 100

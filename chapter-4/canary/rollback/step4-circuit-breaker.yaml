@@ -1,0 +1,17 @@
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: recommendation-circuit-breaker
+spec:
+  host: recommendation
+  trafficPolicy:
+    outlierDetection:
+      consecutive5xxErrors: 3
+      interval: 5s
+      baseEjectionTime: 30s
+    connectionPool:
+      tcp:
+        maxConnections: 200
+      http:
+        maxRequestsPerConnection: 10
+        http1MaxPendingRequests: 30

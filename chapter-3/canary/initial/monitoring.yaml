@@ -1,0 +1,18 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: recommendation-monitoring
+spec:
+  metrics:
+    - providers:
+        - name: prometheus
+      overrides:
+        - match:
+            metric: REQUEST_DURATION
+            mode: CLIENT_AND_SERVER
+        - match:
+            metric: REQUEST_COUNT
+            mode: CLIENT_AND_SERVER
+        - match:
+            metric: RESPONSE_SIZE
+            mode: CLIENT_AND_SERVER

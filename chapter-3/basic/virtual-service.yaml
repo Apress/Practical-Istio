@@ -1,0 +1,33 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: recommendation-virtualservice
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - recommendation-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /recommendations
+      rewrite:
+        uri: "/recommendations"
+      route:
+        - destination:
+            host: recommendation-service
+            subset: v2
+          weight: 20
+        - destination:
+            host: recommendation-service
+            subset: v1
+          weight: 80
+    - match:
+        - uri:
+            prefix: /v1
+      rewrite:
+        uri: "/recommendations"      
+      route:
+        - destination:
+            host: recommendation-service
+            subset: v1

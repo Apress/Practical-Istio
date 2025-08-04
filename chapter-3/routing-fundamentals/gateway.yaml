@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: recommendation-gateway
+  namespace: default
+spec:
+  selector:
+    istio: ingressgateway  # Use the default ingress gateway installed by Istio
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP2
+      hosts:
+        - "*"
+    - port:
+        number: 9001
+        name: http2-9001
+        protocol: HTTP2
+      hosts:
+        - "*"
+    - port:
+        number: 9002
+        name: http2-9002
+        protocol: HTTP2
+      hosts:
+        - "*"

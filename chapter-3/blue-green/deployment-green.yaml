@@ -1,0 +1,32 @@
+# 2. Green Deployment (New Version)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recommendation-green
+  labels:
+    app: recommendation
+    version: green
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recommendation
+      version: green
+  template:
+    metadata:
+      labels:
+        app: recommendation
+        version: green
+    spec:
+      containers:
+        - name: recommendation
+          image: prashanthchaitanya715/recommendation:v2
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
