@@ -1,9 +1,9 @@
 # Apress Source Code
 
-This repository accompanies [*%title%*](https://www.link.springer.com/book/10.1007/%eisbn%) by %author% (Apress, %pubyear%).
+This repository accompanies [*Practical Istio*](https://www.link.springer.com/book/10.1007/979-8-8688-1573-7) by Prashanth Josyula (Apress, 2025).
 
 [comment]: #cover
-![Cover image](%isbn%.jpg)
+![Cover image](979-8-8688-1572-0.jpg)
 
 Download the files as a zip using the green button, or clone the repository to your machine using Git.
 
