@@ -1,0 +1,20 @@
+apiVersion: telemetry.istio.io/v1
+kind: Telemetry
+metadata:
+  name: mesh-default
+  namespace: istio-system
+spec:
+  tracing:
+  - providers:
+    - name: jaeger
+    randomSamplingPercentage: 100.00
+    customTags:
+      provider:
+        literal:
+          value: "jaeger"
+      environment:
+        literal:
+          value: "ecommerce-istio-trace"
+      service_version:
+        literal:
+          value: "2.0.3"

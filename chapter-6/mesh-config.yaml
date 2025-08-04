@@ -1,0 +1,23 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true
+    defaultConfig:
+      tracing: {} # disable MeshConfig tracing options
+    extensionProviders:
+    - name: jaeger
+      opentelemetry:
+        port: 4317
+        service: jaeger-collector.istio-observability.svc.cluster.local
+    - name: prometheus
+      prometheus: {}
+    - name: otel
+      envoyOtelAls:
+        service: jaeger-collector.istio-observability.svc.cluster.local
+        port: 4317
+    defaultProviders:
+      accessLogging:
+      - envoy
+      - otel

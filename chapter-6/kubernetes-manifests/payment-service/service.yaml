@@ -1,0 +1,21 @@
+# Service for exposing the payment service
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+  namespace: ecommerce
+  labels:
+    app: payment-service
+    service: payment-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/actuator/prometheus"
+    prometheus.io/port: "8082"
+spec:
+  ports:
+    - name: http
+      port: 8082
+      targetPort: 8082
+      protocol: TCP
+  selector:
+    app: payment-service

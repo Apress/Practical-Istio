@@ -1,0 +1,20 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: api-authz-policy
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: api-service
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/default/sa/api-client"]
+    to:
+    - operation:
+        methods: ["GET", "POST"]
+        paths: ["/api/v1/*"]
+    when:
+    - key: request.auth.claims[groups]
+      values: ["api-users"]

@@ -1,0 +1,40 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: ext-authz
+spec:
+  action: CUSTOM
+  provider:
+    name: opa-external-authz
+  rules:
+  - to:
+    - operation:
+        paths: ["/*"]
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: ext-authz
+spec:
+  workloadSelector:
+    labels:
+      app: myapp
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_INBOUND
+      listener:
+        filterChain:
+          filter:
+            name: "envoy.filters.network.http_connection_manager"
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        name: envoy.filters.http.ext_authz
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.http.ext_authz.v3.ExtAuthz
+          grpc_service:
+            google_grpc:
+              target_uri: opa:8181
+              stat_prefix: ext_authz
+            timeout: 0.5s

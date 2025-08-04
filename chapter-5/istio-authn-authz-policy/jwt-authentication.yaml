@@ -1,0 +1,13 @@
+# jwt-authentication.yaml
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: jwt-config
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  jwtRules:
+    - issuer: "https://accounts.google.com"
+      jwksUri: "https://www.googleapis.com/oauth2/v3/certs"

@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: ecommerce-gateway
+  namespace: ecommerce
+spec:
+  selector:
+    istio: ingressgateway  # Use the default ingress gateway installed by Istio
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP2
+      hosts:
+        - "*"

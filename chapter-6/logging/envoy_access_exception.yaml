@@ -1,0 +1,15 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: ecommerce-default-logging
+  namespace: istio-system
+spec:
+  accessLogging:
+  - providers:
+    - name: jaeger
+    filter:
+      expression: |
+        response.code >= 500 || 
+        xds.cluster_name == 'BlackHoleCluster' ||
+        (has(response.duration) && response.duration >= 2000) ||
+        (!has(response.code) && has(connection.termination_details))  

@@ -1,0 +1,14 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: audit-policy
+  namespace: default
+spec:
+  action: AUDIT
+  rules:
+  - from:
+    - source:
+        notNamespaces: ["trusted-namespace"]
+    to:
+    - operation:
+        methods: ["POST", "PUT", "DELETE"]

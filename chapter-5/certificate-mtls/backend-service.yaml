@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: backend-service
+  namespace: mtls-demo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: mtls-demo
+  labels:
+    app: backend-service
+spec:
+  ports:
+    - port: 8080
+      name: http
+  selector:
+    app: backend-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-service
+  namespace: mtls-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-service
+  template:
+    metadata:
+      labels:
+        app: backend-service
+    spec:
+      serviceAccountName: backend-service
+      containers:
+        - name: backend
+          image: gcr.io/google-samples/hello-go-gke:1.0
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - name: cert
+              mountPath: /etc/certs
+              readOnly: true
+      volumes:
+        - name: cert
+          secret:
+            secretName: backend-service-tls

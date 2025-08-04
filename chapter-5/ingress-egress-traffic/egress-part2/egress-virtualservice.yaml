@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: external-service-vs
+spec:
+  hosts:
+  - api.external-service.com
+  gateways:
+  - mesh
+  - external-service-gateway
+  http:
+  - match:
+    - gateways:
+      - mesh
+      port: 443
+    route:
+    - destination:
+        host: istio-egressgateway.istio-system.svc.cluster.local
+        port:
+          number: 443
+  - match:
+    - gateways:
+      - external-service-gateway
+      port: 443
+    route:
+    - destination:
+        host: api.external-service.com
+        port:
+          number: 443

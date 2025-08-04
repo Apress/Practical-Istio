@@ -1,0 +1,74 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: ecommerce-virtualservice
+  namespace: ecommerce
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - ecommerce-gateway
+  http:
+  # Order Service Route
+    - match:
+      - uri:
+          prefix: "/orders/actuator"
+      rewrite:
+          uri: "/actuator"
+      route:
+      - destination:
+          host: order-service
+          port:
+            number: 8080
+    - match:
+        - uri:
+            prefix: "/orders/api"
+      rewrite:
+        uri: "/api/orders"
+      route:
+        - destination:
+            host: order-service.ecommerce.svc.cluster.local
+            port:
+              number: 8080
+    # Inventory Service Route
+    - match:
+      - uri:
+          prefix: "/inventory/actuator"
+      rewrite:
+          uri: "/actuator"
+      route:
+      - destination:
+          host: inventory-service
+          port:
+            number: 8081
+    - match:
+        - uri:
+            prefix: "/inventory/api"
+      rewrite:
+        uri: "/api/inventory"
+      route:
+        - destination:
+            host: inventory-service.ecommerce.svc.cluster.local
+            port:
+              number: 8081
+    # Payment Service Route
+    - match:
+      - uri:
+          prefix: "/payments/actuator"
+      rewrite:
+          uri: "/actuator"
+      route:
+      - destination:
+          host: payment-service
+          port:
+            number: 8082
+    - match:
+        - uri:
+            prefix: "/payments/api"
+      rewrite:
+        uri: "/api/payments"
+      route:
+        - destination:
+            host: payment-service.ecommerce.svc.cluster.local
+            port:
+              number: 8082

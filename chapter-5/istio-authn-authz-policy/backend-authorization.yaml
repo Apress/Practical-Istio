@@ -1,0 +1,17 @@
+# backend-authorization.yaml
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: backend-policy
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  rules:
+    - from:
+        - source:
+            principals: ["cluster.local/ns/demo/sa/frontend"]
+      to:
+        - operation:
+            methods: ["GET", "POST"]

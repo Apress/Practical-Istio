@@ -1,0 +1,16 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: egress-gateway-policy
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      app: istio-egressgateway
+  rules:
+  - from:
+    - source:
+        principals: ["cluster.local/ns/default/sa/application"]
+    to:
+    - operation:
+        hosts: ["api.external-service.com"]

@@ -1,0 +1,25 @@
+{
+    "title": "E-commerce Service Mesh Performance",
+    "panels": [
+      {
+        "title": "End-to-End Order Processing Time",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(istio_request_duration_milliseconds_bucket{source_app=\"order-service\", destination_app=\"payment-service\"}[5m])) by (le))"
+          }
+        ]
+      },
+      {
+        "title": "Circuit Breaker Status",
+        "type": "stat",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "sum(rate(istio_requests_total{response_code=\"503\", response_flags=\"UO\"}[5m])) by (destination_app)"
+          }
+        ]
+      }
+    ]
+  }

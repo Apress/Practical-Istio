@@ -1,0 +1,13 @@
+apiVersion: extensions.istio.io/v1alpha1
+kind: WasmPlugin
+metadata:
+  name: header-plugin
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      app: my-service # Target specific applications
+  url: file://Users/prashanth.chaitanya/git-workspaces/istio-wasm-dev/header-plugin/build/header_plugin.wasm
+  phase: AUTHN # Execute during authentication phase
+  pluginConfig: 
+    x-custom-header: my-custom-value # Configuration for the plugin

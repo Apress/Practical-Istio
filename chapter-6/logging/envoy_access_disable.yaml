@@ -1,0 +1,13 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: disable-inventory-logging
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: inventory-service  # Matches our inventory service label
+  accessLogging:
+  - providers:
+    - name: otel
+    disabled: true

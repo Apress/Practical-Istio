@@ -1,0 +1,1832 @@
+2024-12-27 18:24:01 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-27 18:24:01 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 6625 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-27 18:24:01 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-27 18:24:01 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-27 18:24:01 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext trace_id= span_id= - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'restTemplate' defined in com.example.istio.order.OrderServiceApplication: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=orderServiceApplication; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in com.example.istio.order.OrderServiceApplication] for bean 'restTemplate' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=restTemplateConfig; factoryMethodName=restTemplate; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/example/istio/order/config/RestTemplateConfig.class]] bound.
+2024-12-27 18:24:01 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger trace_id= span_id= - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-27 18:24:01 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter trace_id= span_id= - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'restTemplate', defined in com.example.istio.order.OrderServiceApplication, could not be registered. A bean with that name has already been defined in class path resource [com/example/istio/order/config/RestTemplateConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-12-27 18:30:18 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-27 18:30:18 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 10144 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-27 18:30:18 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-27 18:30:18 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-27 18:30:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27 18:30:19 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Finished Spring Data repository scanning in 37 ms. Found 1 JPA repository interface.
+2024-12-27 18:30:19 [main] INFO  o.s.cloud.context.scope.GenericScope trace_id= span_id= - BeanFactory id=3df205b2-25c8-3e4a-b759-8db0f0306364
+2024-12-27 18:30:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat initialized with port 8080 (http)
+2024-12-27 18:30:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:30:19 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Starting service [Tomcat]
+2024-12-27 18:30:19 [main] INFO  o.a.catalina.core.StandardEngine trace_id= span_id= - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-27 18:30:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring embedded WebApplicationContext
+2024-12-27 18:30:19 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext trace_id= span_id= - Root WebApplicationContext: initialization completed in 980 ms
+2024-12-27 18:30:19 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Starting...
+2024-12-27 18:30:19 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:30:19 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Start completed.
+2024-12-27 18:30:19 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration trace_id= span_id= - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:orderdb'
+2024-12-27 18:30:20 [main] INFO  o.h.jpa.internal.util.LogHelper trace_id= span_id= - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27 18:30:20 [main] INFO  org.hibernate.Version trace_id= span_id= - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-12-27 18:30:20 [main] INFO  o.h.c.i.RegionFactoryInitiator trace_id= span_id= - HHH000026: Second-level cache disabled
+2024-12-27 18:30:20 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace_id= span_id= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27 18:30:20 [main] WARN  org.hibernate.orm.deprecation trace_id= span_id= - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27 18:30:20 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator trace_id= span_id= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27 18:30:20 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:30:21 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext trace_id= span_id= - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes/com/example/istio/order/controller/OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+2024-12-27 18:30:21 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:30:21 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown initiated...
+2024-12-27 18:30:21 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown completed.
+2024-12-27 18:30:21 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Stopping service [Tomcat]
+2024-12-27 18:30:21 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger trace_id= span_id= - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-27 18:30:21 [main] ERROR o.s.boot.SpringApplication trace_id= span_id= - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes/com/example/istio/order/controller/OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.example.istio.order.OrderServiceApplication.main(OrderServiceApplication.java:16)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'service.inventory.url' in value "${service.inventory.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:921)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	... 31 common frames omitted
+2024-12-27 18:32:41 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-27 18:32:41 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 15621 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-27 18:32:41 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-27 18:32:41 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-27 18:32:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27 18:32:42 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Finished Spring Data repository scanning in 38 ms. Found 1 JPA repository interface.
+2024-12-27 18:32:42 [main] INFO  o.s.cloud.context.scope.GenericScope trace_id= span_id= - BeanFactory id=3df205b2-25c8-3e4a-b759-8db0f0306364
+2024-12-27 18:32:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat initialized with port 8080 (http)
+2024-12-27 18:32:42 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:32:42 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Starting service [Tomcat]
+2024-12-27 18:32:42 [main] INFO  o.a.catalina.core.StandardEngine trace_id= span_id= - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-27 18:32:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring embedded WebApplicationContext
+2024-12-27 18:32:42 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext trace_id= span_id= - Root WebApplicationContext: initialization completed in 994 ms
+2024-12-27 18:32:42 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Starting...
+2024-12-27 18:32:43 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:32:43 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Start completed.
+2024-12-27 18:32:43 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration trace_id= span_id= - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:orderdb'
+2024-12-27 18:32:43 [main] INFO  o.h.jpa.internal.util.LogHelper trace_id= span_id= - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27 18:32:43 [main] INFO  org.hibernate.Version trace_id= span_id= - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-12-27 18:32:43 [main] INFO  o.h.c.i.RegionFactoryInitiator trace_id= span_id= - HHH000026: Second-level cache disabled
+2024-12-27 18:32:43 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace_id= span_id= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27 18:32:43 [main] WARN  org.hibernate.orm.deprecation trace_id= span_id= - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27 18:32:43 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator trace_id= span_id= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27 18:32:43 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:32:44 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext trace_id= span_id= - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes/com/example/istio/order/controller/OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+2024-12-27 18:32:44 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:32:44 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown initiated...
+2024-12-27 18:32:44 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown completed.
+2024-12-27 18:32:44 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Stopping service [Tomcat]
+2024-12-27 18:32:44 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger trace_id= span_id= - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-27 18:32:44 [main] ERROR o.s.boot.SpringApplication trace_id= span_id= - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes/com/example/istio/order/controller/OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.example.istio.order.OrderServiceApplication.main(OrderServiceApplication.java:16)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'service.inventory.url' in value "${service.inventory.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:921)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	... 31 common frames omitted
+2024-12-27 18:33:53 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-27 18:33:53 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 15968 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-27 18:33:53 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-27 18:33:53 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-27 18:33:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27 18:33:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2024-12-27 18:33:54 [main] INFO  o.s.cloud.context.scope.GenericScope trace_id= span_id= - BeanFactory id=3df205b2-25c8-3e4a-b759-8db0f0306364
+2024-12-27 18:33:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat initialized with port 8080 (http)
+2024-12-27 18:33:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:33:54 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Starting service [Tomcat]
+2024-12-27 18:33:54 [main] INFO  o.a.catalina.core.StandardEngine trace_id= span_id= - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-27 18:33:54 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring embedded WebApplicationContext
+2024-12-27 18:33:54 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext trace_id= span_id= - Root WebApplicationContext: initialization completed in 997 ms
+2024-12-27 18:33:55 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Starting...
+2024-12-27 18:33:55 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:33:55 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Start completed.
+2024-12-27 18:33:55 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration trace_id= span_id= - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:orderdb'
+2024-12-27 18:33:55 [main] INFO  o.h.jpa.internal.util.LogHelper trace_id= span_id= - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27 18:33:55 [main] INFO  org.hibernate.Version trace_id= span_id= - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-12-27 18:33:55 [main] INFO  o.h.c.i.RegionFactoryInitiator trace_id= span_id= - HHH000026: Second-level cache disabled
+2024-12-27 18:33:55 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace_id= span_id= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27 18:33:55 [main] WARN  org.hibernate.orm.deprecation trace_id= span_id= - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27 18:33:55 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator trace_id= span_id= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27 18:33:55 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:33:56 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext trace_id= span_id= - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes/com/example/istio/order/controller/OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+2024-12-27 18:33:56 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:33:56 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown initiated...
+2024-12-27 18:33:56 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown completed.
+2024-12-27 18:33:56 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Stopping service [Tomcat]
+2024-12-27 18:33:56 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger trace_id= span_id= - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-27 18:33:56 [main] ERROR o.s.boot.SpringApplication trace_id= span_id= - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes/com/example/istio/order/controller/OrderController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:802)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1354)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:561)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:960)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:762)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:464)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1358)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1347)
+	at com.example.istio.order.OrderServiceApplication.main(OrderServiceApplication.java:16)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'orderService': Injection of autowired dependencies failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:514)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1418)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'service.inventory.url' in value "${service.inventory.url}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:921)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:784)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:767)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:508)
+	... 31 common frames omitted
+2024-12-27 18:34:52 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-27 18:34:52 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 16396 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-27 18:34:52 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-27 18:34:52 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-27 18:34:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27 18:34:52 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2024-12-27 18:34:53 [main] INFO  o.s.cloud.context.scope.GenericScope trace_id= span_id= - BeanFactory id=aab89c5a-d586-32d4-8c77-1467152f1f3d
+2024-12-27 18:34:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat initialized with port 8080 (http)
+2024-12-27 18:34:53 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:34:53 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Starting service [Tomcat]
+2024-12-27 18:34:53 [main] INFO  o.a.catalina.core.StandardEngine trace_id= span_id= - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-27 18:34:53 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring embedded WebApplicationContext
+2024-12-27 18:34:53 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext trace_id= span_id= - Root WebApplicationContext: initialization completed in 1015 ms
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - Driver class org.h2.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ed828d
+2024-12-27 18:34:53 [main] DEBUG o.s.jdbc.datasource.DataSourceUtils trace_id= span_id= - Fetching JDBC Connection from DataSource
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - HikariPool-1 - configuration:
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - allowPoolSuspension.............false
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - autoCommit......................true
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - catalog.........................none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionInitSql...............none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionTestQuery.............none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionTimeout...............30000
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSource......................none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceClassName.............none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceJNDI..................none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceProperties............{password=<masked>}
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - driverClassName................."org.h2.Driver"
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - exceptionOverrideClassName......none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - healthCheckProperties...........{}
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - healthCheckRegistry.............none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - idleTimeout.....................600000
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - initializationFailTimeout.......1
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - isolateInternalQueries..........false
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - jdbcUrl.........................jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - keepaliveTime...................0
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - leakDetectionThreshold..........0
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - maxLifetime.....................1800000
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - maximumPoolSize.................10
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - metricRegistry..................none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - metricsTrackerFactory...........none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - minimumIdle.....................10
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - password........................<masked>
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - poolName........................"HikariPool-1"
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - readOnly........................false
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - registerMbeans..................false
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - scheduledExecutor...............none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - schema..........................none
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - threadFactory...................internal
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - transactionIsolation............default
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - username........................"sa"
+2024-12-27 18:34:53 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - validationTimeout...............5000
+2024-12-27 18:34:53 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - HikariPool-1 - Starting...
+2024-12-27 18:34:53 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - HikariPool-1 - Start completed.
+2024-12-27 18:34:53 [main] INFO  o.h.jpa.internal.util.LogHelper trace_id= span_id= - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27 18:34:53 [main] INFO  org.hibernate.Version trace_id= span_id= - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-12-27 18:34:53 [main] INFO  o.h.c.i.RegionFactoryInitiator trace_id= span_id= - HHH000026: Second-level cache disabled
+2024-12-27 18:34:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn1: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn2: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn3: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn4: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn5: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn6: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace_id= span_id= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn7: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn8: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Added connection conn9: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA
+2024-12-27 18:34:53 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:34:54 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator trace_id= span_id= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27 18:34:54 [main] DEBUG org.hibernate.SQL trace_id= span_id= - drop table if exists order_items cascade 
+2024-12-27 18:34:54 [main] DEBUG org.hibernate.SQL trace_id= span_id= - drop table if exists orders cascade 
+2024-12-27 18:34:54 [main] DEBUG org.hibernate.SQL trace_id= span_id= - create table order_items (quantity integer, subtotal numeric(38,2), unit_price numeric(38,2), id bigint generated by default as identity, order_id varchar(255), product_category varchar(255), product_id varchar(255), product_name varchar(255), primary key (id))
+2024-12-27 18:34:54 [main] DEBUG org.hibernate.SQL trace_id= span_id= - create table orders (total_amount numeric(38,2), created_at timestamp(6), updated_at timestamp(6), created_by varchar(255), customer_id varchar(255), last_modified_by varchar(255), order_id varchar(255) not null, payment_id varchar(255), span_id varchar(255), status varchar(255) check (status in ('CREATED','VALIDATED','INVENTORY_CHECKING','INVENTORY_CONFIRMED','PAYMENT_PENDING','PAYMENT_PROCESSED','PAYMENT_FAILED','COMPLETED','CANCELLED','FAILED')), trace_id varchar(255), primary key (order_id))
+2024-12-27 18:34:54 [main] DEBUG org.hibernate.SQL trace_id= span_id= - alter table if exists order_items add constraint FKbioxgbv59vetrxe0ejfubep1w foreign key (order_id) references orders
+2024-12-27 18:34:54 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:34:54 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration trace_id= span_id= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27 18:34:55 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver trace_id= span_id= - Exposing 5 endpoint(s) beneath base path '/actuator'
+2024-12-27 18:34:55 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:34:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat started on port 8080 (http) with context path ''
+2024-12-27 18:34:55 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Started OrderServiceApplication in 3.749 seconds (process running for 4.672)
+2024-12-27 18:35:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:35:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:35:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:35:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:36:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:36:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:36:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:36:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:37:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:37:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:37:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:37:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:38:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:38:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:38:48 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-27 18:38:48 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet trace_id= span_id= - Initializing Servlet 'dispatcherServlet'
+2024-12-27 18:38:48 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet trace_id= span_id= - Completed initialization in 1 ms
+2024-12-27 18:38:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:38:53 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:39:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:39:23 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:39:38 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown trace_id= span_id= - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-27 18:39:38 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Pausing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:39:39 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown trace_id= span_id= - Graceful shutdown complete
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL trace_id= span_id= - drop table if exists order_items cascade 
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] DEBUG org.hibernate.SQL trace_id= span_id= - drop table if exists orders cascade 
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - HikariPool-1 - Shutdown initiated...
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - Before shutdown stats (total=10, active=0, idle=10, waiting=0)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn0: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn1: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn2: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn3: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn4: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn5: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn6: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn7: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn8: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [HikariPool-1 connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - HikariPool-1 - Closing connection conn9: url=jdbc:h2:mem:ec73cdb4-2424-4597-852e-75b019169e68 user=SA: (connection evicted)
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - HikariPool-1 - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2024-12-27 18:39:39 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - HikariPool-1 - Shutdown completed.
+2024-12-27 18:42:26 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-27 18:42:27 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 18858 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-27 18:42:27 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-27 18:42:27 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-27 18:42:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-27 18:42:27 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2024-12-27 18:42:27 [main] INFO  o.s.cloud.context.scope.GenericScope trace_id= span_id= - BeanFactory id=21fbfba4-3603-31d8-8c14-40fcaef85bb3
+2024-12-27 18:42:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat initialized with port 8080 (http)
+2024-12-27 18:42:27 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:42:27 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Starting service [Tomcat]
+2024-12-27 18:42:27 [main] INFO  o.a.catalina.core.StandardEngine trace_id= span_id= - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-27 18:42:28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring embedded WebApplicationContext
+2024-12-27 18:42:28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext trace_id= span_id= - Root WebApplicationContext: initialization completed in 988 ms
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - Driver class org.h2.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ed828d
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - order-service-pool - configuration:
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - allowPoolSuspension.............false
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - autoCommit......................true
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - catalog.........................none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionInitSql...............none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionTestQuery.............none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionTimeout...............20000
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSource......................none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceClassName.............none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceJNDI..................none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceProperties............{password=<masked>}
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - driverClassName................."org.h2.Driver"
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - exceptionOverrideClassName......none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - healthCheckProperties...........{}
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - healthCheckRegistry.............none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - idleTimeout.....................300000
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - initializationFailTimeout.......1
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - isolateInternalQueries..........false
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - jdbcUrl.........................jdbc:h2:mem:orderdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - keepaliveTime...................0
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - leakDetectionThreshold..........0
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - maxLifetime.....................1200000
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - maximumPoolSize.................10
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - metricRegistry..................none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - metricsTrackerFactory...........none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - minimumIdle.....................5
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - password........................<masked>
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - poolName........................"order-service-pool"
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - readOnly........................false
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - registerMbeans..................false
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - scheduledExecutor...............none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - schema..........................none
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - threadFactory...................internal
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - transactionIsolation............default
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - username........................"sa"
+2024-12-27 18:42:28 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - validationTimeout...............5000
+2024-12-27 18:42:28 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Starting...
+2024-12-27 18:42:28 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:42:28 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Start completed.
+2024-12-27 18:42:28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration trace_id= span_id= - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:orderdb'
+2024-12-27 18:42:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=1, active=0, idle=1, waiting=0)
+2024-12-27 18:42:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=1, active=0, idle=1, waiting=0)
+2024-12-27 18:42:28 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn1: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:42:28 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn2: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:42:28 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn3: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:42:28 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn4: url=jdbc:h2:mem:orderdb user=SA
+2024-12-27 18:42:28 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After adding stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:42:28 [main] INFO  o.h.jpa.internal.util.LogHelper trace_id= span_id= - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-27 18:42:28 [main] INFO  org.hibernate.Version trace_id= span_id= - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-12-27 18:42:28 [main] INFO  o.h.c.i.RegionFactoryInitiator trace_id= span_id= - HHH000026: Second-level cache disabled
+2024-12-27 18:42:28 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace_id= span_id= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-27 18:42:28 [main] WARN  org.hibernate.orm.deprecation trace_id= span_id= - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-27 18:42:29 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator trace_id= span_id= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-27 18:42:29 [main] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    create table order_items (
+        id bigint generated by default as identity,
+        product_category varchar(255),
+        product_id varchar(255),
+        product_name varchar(255),
+        quantity integer,
+        subtotal numeric(38,2),
+        unit_price numeric(38,2),
+        order_id varchar(255),
+        primary key (id)
+    )
+2024-12-27 18:42:29 [main] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    create table orders (
+        order_id varchar(255) not null,
+        created_at timestamp(6),
+        created_by varchar(255),
+        customer_id varchar(255),
+        last_modified_by varchar(255),
+        payment_id varchar(255),
+        span_id varchar(255),
+        status varchar(255) check (status in ('CREATED','VALIDATED','INVENTORY_CHECKING','INVENTORY_CONFIRMED','PAYMENT_PENDING','PAYMENT_PROCESSED','PAYMENT_FAILED','COMPLETED','CANCELLED','FAILED')),
+        total_amount numeric(38,2),
+        trace_id varchar(255),
+        updated_at timestamp(6),
+        primary key (order_id)
+    )
+2024-12-27 18:42:29 [main] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    alter table if exists order_items 
+       add constraint FKbioxgbv59vetrxe0ejfubep1w 
+       foreign key (order_id) 
+       references orders
+2024-12-27 18:42:29 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:42:29 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration trace_id= span_id= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-27 18:42:30 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver trace_id= span_id= - Exposing 5 endpoint(s) beneath base path '/actuator'
+2024-12-27 18:42:30 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:42:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat started on port 8080 (http) with context path ''
+2024-12-27 18:42:30 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Started OrderServiceApplication in 3.983 seconds (process running for 4.92)
+2024-12-27 18:42:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:42:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:42:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:43:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:43:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:43:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:43:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:43:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:43:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:44:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:44:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:44:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:44:34 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-27 18:44:34 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet trace_id= span_id= - Initializing Servlet 'dispatcherServlet'
+2024-12-27 18:44:34 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet trace_id= span_id= - Completed initialization in 1 ms
+2024-12-27 18:44:34 [http-nio-8080-exec-1] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:44:34 [http-nio-8080-exec-1] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:44:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:44:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:44:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:34 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:35 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:35 [http-nio-8080-exec-1] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:44:35 [http-nio-8080-exec-1] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    405541 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    1952748 nanoseconds spent preparing 13 JDBC statements;
+    2307750 nanoseconds spent executing 13 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    12089500 nanoseconds spent executing 1 flushes (flushing a total of 7 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:44:40 [http-nio-8080-exec-3] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:44:40 [http-nio-8080-exec-3] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:40 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:40 [http-nio-8080-exec-3] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:44:40 [http-nio-8080-exec-3] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    71958 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    373377 nanoseconds spent preparing 13 JDBC statements;
+    3758249 nanoseconds spent executing 13 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    5506375 nanoseconds spent executing 1 flushes (flushing a total of 7 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:44:41 [http-nio-8080-exec-5] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:44:41 [http-nio-8080-exec-5] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:41 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:41 [http-nio-8080-exec-5] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:44:41 [http-nio-8080-exec-5] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    132917 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    310210 nanoseconds spent preparing 15 JDBC statements;
+    2917915 nanoseconds spent executing 15 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    2802834 nanoseconds spent executing 1 flushes (flushing a total of 9 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:44:42 [http-nio-8080-exec-8] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:44:42 [http-nio-8080-exec-8] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:42 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:42 [http-nio-8080-exec-8] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:44:42 [http-nio-8080-exec-8] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    58333 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    333957 nanoseconds spent preparing 13 JDBC statements;
+    3004457 nanoseconds spent executing 13 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    3934208 nanoseconds spent executing 1 flushes (flushing a total of 7 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:44:43 [http-nio-8080-exec-10] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:44:43 [http-nio-8080-exec-10] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:43 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:44:43 [http-nio-8080-exec-10] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:44:43 [http-nio-8080-exec-10] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    150708 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    234001 nanoseconds spent preparing 13 JDBC statements;
+    2467123 nanoseconds spent executing 13 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    1359000 nanoseconds spent executing 1 flushes (flushing a total of 7 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:44:44 [OkHttp http://jaeger-collector.istio-observability.svc.cluster.local:4317/...] WARN  i.o.e.internal.grpc.GrpcExporter trace_id= span_id= - Failed to export spans. Server responded with gRPC status code 2. Error message: jaeger-collector.istio-observability.svc.cluster.local: nodename nor servname provided, or not known
+2024-12-27 18:44:49 [OkHttp http://jaeger-collector.istio-observability.svc.cluster.local:4317/...] WARN  i.o.e.internal.grpc.GrpcExporter trace_id= span_id= - Failed to export spans. Server responded with gRPC status code 2. Error message: jaeger-collector.istio-observability.svc.cluster.local
+2024-12-27 18:44:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:44:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:44:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:45:02 [http-nio-8080-exec-11] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:45:02 [http-nio-8080-exec-11] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:45:02 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:45:02 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:45:02 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:02 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:02 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:02 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:45:03 [http-nio-8080-exec-11] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:45:03 [http-nio-8080-exec-11] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:45:03 [http-nio-8080-exec-11] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    64875 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    189333 nanoseconds spent preparing 13 JDBC statements;
+    1878543 nanoseconds spent executing 13 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    1798917 nanoseconds spent executing 1 flushes (flushing a total of 7 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:45:05 [http-nio-8080-exec-13] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Received order request for customer: CUST-001 with 2 items
+2024-12-27 18:45:05 [http-nio-8080-exec-13] INFO  c.e.istio.order.service.OrderService trace_id= span_id= - Processing order for customer: CUST-001
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    select
+        oe1_0.order_id,
+        oe1_0.created_at,
+        oe1_0.created_by,
+        oe1_0.customer_id,
+        oe1_0.last_modified_by,
+        oe1_0.payment_id,
+        oe1_0.span_id,
+        oe1_0.status,
+        oe1_0.total_amount,
+        oe1_0.trace_id,
+        oe1_0.updated_at,
+        i1_0.order_id,
+        i1_0.id,
+        i1_0.product_category,
+        i1_0.product_id,
+        i1_0.product_name,
+        i1_0.quantity,
+        i1_0.subtotal,
+        i1_0.unit_price 
+    from
+        orders oe1_0 
+    left join
+        order_items i1_0 
+            on oe1_0.order_id=i1_0.order_id 
+    where
+        oe1_0.order_id=?
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        orders
+        (created_at, created_by, customer_id, last_modified_by, payment_id, span_id, status, total_amount, trace_id, updated_at, order_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    insert 
+    into
+        order_items
+        (product_category, product_id, product_name, quantity, subtotal, unit_price, id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        orders 
+    set
+        created_at=?,
+        created_by=?,
+        customer_id=?,
+        last_modified_by=?,
+        payment_id=?,
+        span_id=?,
+        status=?,
+        total_amount=?,
+        trace_id=?,
+        updated_at=? 
+    where
+        order_id=?
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    update
+        order_items 
+    set
+        order_id=? 
+    where
+        id=?
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:45:05 [http-nio-8080-exec-13] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    delete 
+    from
+        order_items 
+    where
+        id=?
+2024-12-27 18:45:05 [http-nio-8080-exec-13] INFO  c.e.i.o.controller.OrderController trace_id= span_id= - Successfully processed order for customer: CUST-001
+2024-12-27 18:45:05 [http-nio-8080-exec-13] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    83083 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    324000 nanoseconds spent preparing 13 JDBC statements;
+    2254001 nanoseconds spent executing 13 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    2668750 nanoseconds spent executing 1 flushes (flushing a total of 7 entities and 1 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-27 18:45:09 [OkHttp http://jaeger-collector.istio-observability.svc.cluster.local:4317/...] WARN  i.o.e.internal.grpc.GrpcExporter trace_id= span_id= - Failed to export spans. Server responded with gRPC status code 2. Error message: jaeger-collector.istio-observability.svc.cluster.local: nodename nor servname provided, or not known
+2024-12-27 18:45:14 [OkHttp http://jaeger-collector.istio-observability.svc.cluster.local:4317/...] WARN  i.o.e.internal.grpc.GrpcExporter trace_id= span_id= - Failed to export spans. Server responded with gRPC status code 2. Error message: jaeger-collector.istio-observability.svc.cluster.local
+2024-12-27 18:45:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:45:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:45:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:45:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:45:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:45:58 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:46:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:46:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:46:28 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown trace_id= span_id= - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-27 18:46:37 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Pausing ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:46:37 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown trace_id= span_id= - Graceful shutdown complete
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown initiated...
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before shutdown stats (total=5, active=0, idle=5, waiting=0)
+2024-12-27 18:46:37 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn0: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-27 18:46:37 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn1: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-27 18:46:37 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn2: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-27 18:46:37 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn3: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-27 18:46:37 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn4: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2024-12-27 18:46:37 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown completed.

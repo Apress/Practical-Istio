@@ -1,0 +1,15 @@
+{
+    "title": "E-commerce Error Tracking",
+    "panels": [
+      {
+        "title": "Payment Processing Errors",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "sum(rate(payment_errors_total{error_type!=\"\"}[5m])) by (error_type)"
+          }
+        ]
+      }
+    ]
+  }

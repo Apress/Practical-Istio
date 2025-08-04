@@ -1,0 +1,60 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: inventory-metrics-disable
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: inventory-service
+  metrics:
+    - providers:
+      - name: prometheus
+      overrides:
+      - match:
+          metric: RESPONSE_SIZE
+          mode: CLIENT_AND_SERVER
+        disabled: true
+
+---
+
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: payment-metrics
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: payment-service-disable
+  metrics:
+    - providers:
+      - name: prometheus
+      overrides:
+      - match:
+          metric: REQUEST_DURATION
+          mode: CLIENT
+        disabled: true  # Disable client-side duration metrics
+      - match:
+          metric: REQUEST_DURATION
+          mode: SERVER
+        tagOverrides:    # Keep server-side metrics with custom tags
+          payment_status:
+            value: "response.headers['x-payment-status']"
+
+---
+
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: disable-prometheus
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: test-service
+  metrics:
+  - providers:
+    - name: prometheus
+    overrides:
+    - disabled: true

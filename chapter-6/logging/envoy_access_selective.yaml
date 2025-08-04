@@ -1,0 +1,15 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: payment-inbound-logging
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: payment-service  # Matches our payment service label
+  accessLogging:
+  - providers:
+    - name: otel
+    match:
+      mode: CLIENT  # Only disable outbound logging
+    disabled: true

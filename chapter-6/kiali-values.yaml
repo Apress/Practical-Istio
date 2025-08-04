@@ -1,0 +1,23 @@
+auth:
+  strategy: anonymous  # For testing. Use 'token' in production
+
+deployment:
+  view_only_mode: false
+  accessible_namespaces: ["**"]
+
+external_services:
+  prometheus:
+    url: http://prometheus-server.istio-observability.svc.cluster.local
+  grafana:
+    external_url: http://grafana.istio-observability.svc.cluster.local
+  tracing:
+    external_url: http://jaeger-query.istio-observability.svc.cluster.local:16686
+
+server:
+  web_root: /kiali
+
+istio_namespace: istio-system # namespace where Istio is installed
+istio_component_namespaces:
+  prometheus: istio-observability
+  grafana: istio-observability
+  tracing: istio-observability

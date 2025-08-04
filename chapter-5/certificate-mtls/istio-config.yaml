@@ -1,0 +1,26 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+metadata:
+  namespace: istio-system
+spec:
+  values:
+    global:
+      caAddress: istiod.istio-system.svc:15012
+      certificatesDir: /etc/cert-manager/istio
+    pilot:
+      env:
+        ENABLE_CA_SERVER: "false"
+      k8s:
+        overlays:
+          - kind: Deployment
+            name: istiod
+            patches:
+              - path: spec.template.spec.containers.[name:discovery].volumeMounts
+                value:
+                  - name: istio-ca
+                    mountPath: /etc/cert-manager/istio
+              - path: spec.template.spec.volumes
+                value:
+                  - name: istio-ca
+                    secret:
+                      secretName: istio-ca

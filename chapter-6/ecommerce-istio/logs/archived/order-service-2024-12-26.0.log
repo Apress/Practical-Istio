@@ -1,0 +1,214 @@
+2024-12-26 00:25:06 [background-preinit] INFO  o.h.validator.internal.util.Version trace_id= span_id= - HV000001: Hibernate Validator 8.0.1.Final
+2024-12-26 00:25:06 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Starting OrderServiceApplication using Java 17.0.10.0.101 with PID 95282 (/Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio/order-service/target/classes started by prashanth.chaitanya in /Users/prashanth.chaitanya/git-workspaces/istio-book/chapter-5/ecommerce-istio)
+2024-12-26 00:25:06 [main] DEBUG c.e.i.order.OrderServiceApplication trace_id= span_id= - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-12-26 00:25:06 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - No active profile set, falling back to 1 default profile: "default"
+2024-12-26 00:25:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-26 00:25:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate trace_id= span_id= - Finished Spring Data repository scanning in 36 ms. Found 1 JPA repository interface.
+2024-12-26 00:25:06 [main] INFO  o.s.cloud.context.scope.GenericScope trace_id= span_id= - BeanFactory id=793a2a00-13ba-389b-bf8f-de772c3d6fbc
+2024-12-26 00:25:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat initialized with port 8080 (http)
+2024-12-26 00:25:07 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Initializing ProtocolHandler ["http-nio-8080"]
+2024-12-26 00:25:07 [main] INFO  o.a.catalina.core.StandardService trace_id= span_id= - Starting service [Tomcat]
+2024-12-26 00:25:07 [main] INFO  o.a.catalina.core.StandardEngine trace_id= span_id= - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-12-26 00:25:07 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring embedded WebApplicationContext
+2024-12-26 00:25:07 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext trace_id= span_id= - Root WebApplicationContext: initialization completed in 967 ms
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - Driver class org.h2.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ed828d
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - order-service-pool - configuration:
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - allowPoolSuspension.............false
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - autoCommit......................true
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - catalog.........................none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionInitSql...............none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionTestQuery.............none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - connectionTimeout...............20000
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSource......................none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceClassName.............none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceJNDI..................none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - dataSourceProperties............{password=<masked>}
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - driverClassName................."org.h2.Driver"
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - exceptionOverrideClassName......none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - healthCheckProperties...........{}
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - healthCheckRegistry.............none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - idleTimeout.....................300000
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - initializationFailTimeout.......1
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - isolateInternalQueries..........false
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - jdbcUrl.........................jdbc:h2:mem:orderdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - keepaliveTime...................0
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - leakDetectionThreshold..........0
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - maxLifetime.....................1200000
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - maximumPoolSize.................10
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - metricRegistry..................none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - metricsTrackerFactory...........none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - minimumIdle.....................5
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - password........................<masked>
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - poolName........................"order-service-pool"
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - readOnly........................false
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - registerMbeans..................false
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - scheduledExecutor...............none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - schema..........................none
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - threadFactory...................internal
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - transactionIsolation............default
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - username........................"sa"
+2024-12-26 00:25:07 [main] DEBUG com.zaxxer.hikari.HikariConfig trace_id= span_id= - validationTimeout...............5000
+2024-12-26 00:25:07 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Starting...
+2024-12-26 00:25:07 [main] INFO  com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn0: url=jdbc:h2:mem:orderdb user=SA
+2024-12-26 00:25:07 [main] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Start completed.
+2024-12-26 00:25:07 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration trace_id= span_id= - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:orderdb'
+2024-12-26 00:25:07 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=1, active=0, idle=1, waiting=0)
+2024-12-26 00:25:07 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=1, active=0, idle=1, waiting=0)
+2024-12-26 00:25:07 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn1: url=jdbc:h2:mem:orderdb user=SA
+2024-12-26 00:25:07 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn2: url=jdbc:h2:mem:orderdb user=SA
+2024-12-26 00:25:07 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn3: url=jdbc:h2:mem:orderdb user=SA
+2024-12-26 00:25:07 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Added connection conn4: url=jdbc:h2:mem:orderdb user=SA
+2024-12-26 00:25:07 [main] INFO  o.h.jpa.internal.util.LogHelper trace_id= span_id= - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-26 00:25:07 [order-service-pool connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After adding stats (total=5, active=0, idle=5, waiting=0)
+2024-12-26 00:25:07 [main] INFO  org.hibernate.Version trace_id= span_id= - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-12-26 00:25:07 [main] INFO  o.h.c.i.RegionFactoryInitiator trace_id= span_id= - HHH000026: Second-level cache disabled
+2024-12-26 00:25:07 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo trace_id= span_id= - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-26 00:25:07 [main] WARN  org.hibernate.orm.deprecation trace_id= span_id= - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-26 00:25:08 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator trace_id= span_id= - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-26 00:25:08 [main] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    create table order_items (
+        id bigint generated by default as identity,
+        product_category varchar(255),
+        product_id varchar(255),
+        product_name varchar(255),
+        quantity integer,
+        subtotal numeric(38,2),
+        unit_price numeric(38,2),
+        order_id varchar(255),
+        primary key (id)
+    )
+2024-12-26 00:25:08 [main] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    create table orders (
+        order_id varchar(255) not null,
+        created_at timestamp(6),
+        created_by varchar(255),
+        customer_id varchar(255),
+        last_modified_by varchar(255),
+        payment_id varchar(255),
+        span_id varchar(255),
+        status varchar(255) check (status in ('CREATED','VALIDATED','INVENTORY_CHECKING','INVENTORY_CONFIRMED','PAYMENT_PENDING','PAYMENT_PROCESSED','PAYMENT_FAILED','COMPLETED','CANCELLED','FAILED')),
+        total_amount numeric(38,2),
+        trace_id varchar(255),
+        updated_at timestamp(6),
+        primary key (order_id)
+    )
+2024-12-26 00:25:08 [main] DEBUG org.hibernate.SQL trace_id= span_id= - 
+    alter table if exists order_items 
+       add constraint FKbioxgbv59vetrxe0ejfubep1w 
+       foreign key (order_id) 
+       references orders
+2024-12-26 00:25:08 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:08 [main] INFO  o.h.e.i.StatisticalLoggingSessionEventListener trace_id= span_id= - Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2024-12-26 00:25:09 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration trace_id= span_id= - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-26 00:25:09 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver trace_id= span_id= - Exposing 5 endpoint(s) beneath base path '/actuator'
+2024-12-26 00:25:09 [main] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Starting ProtocolHandler ["http-nio-8080"]
+2024-12-26 00:25:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer trace_id= span_id= - Tomcat started on port 8080 (http) with context path ''
+2024-12-26 00:25:09 [main] INFO  c.e.i.order.OrderServiceApplication trace_id= span_id= - Started OrderServiceApplication in 3.811 seconds (process running for 9.711)
+2024-12-26 00:25:37 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-26 00:25:37 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-26 00:25:37 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-26 00:26:07 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before cleanup stats (total=5, active=0, idle=5, waiting=0)
+2024-12-26 00:26:07 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After cleanup  stats (total=5, active=0, idle=5, waiting=0)
+2024-12-26 00:26:07 [order-service-pool housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Fill pool skipped, pool has sufficient level or currently being filled (queueDepth=0).
+2024-12-26 00:26:20 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] trace_id= span_id= - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-26 00:26:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet trace_id= span_id= - Initializing Servlet 'dispatcherServlet'
+2024-12-26 00:26:20 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet trace_id= span_id= - Completed initialization in 1 ms
+2024-12-26 00:26:24 [http-nio-8080-exec-2] DEBUG o.s.jdbc.datasource.DataSourceUtils trace_id= span_id= - Fetching JDBC Connection from DataSource
+2024-12-26 00:26:24 [http-nio-8080-exec-2] DEBUG o.s.jdbc.datasource.DataSourceUtils trace_id= span_id= - Fetching JDBC Connection from DataSource
+2024-12-26 00:26:31 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.tomcat.GracefulShutdown trace_id= span_id= - Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-26 00:26:31 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Pausing ProtocolHandler ["http-nio-8080"]
+2024-12-26 00:26:32 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown trace_id= span_id= - Graceful shutdown complete
+2024-12-26 00:26:32 [SpringApplicationShutdownHook] INFO  o.a.coyote.http11.Http11NioProtocol trace_id= span_id= - Stopping ProtocolHandler ["http-nio-8080"]
+2024-12-26 00:26:32 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean trace_id= span_id= - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-26 00:26:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown initiated...
+2024-12-26 00:26:32 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - Before shutdown stats (total=5, active=0, idle=5, waiting=0)
+2024-12-26 00:26:32 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn0: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-26 00:26:32 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn1: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-26 00:26:32 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn2: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-26 00:26:32 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn3: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-26 00:26:32 [order-service-pool connection closer] DEBUG com.zaxxer.hikari.pool.PoolBase trace_id= span_id= - order-service-pool - Closing connection conn4: url=jdbc:h2:mem:orderdb user=SA: (connection evicted)
+2024-12-26 00:26:32 [SpringApplicationShutdownHook] DEBUG com.zaxxer.hikari.pool.HikariPool trace_id= span_id= - order-service-pool - After shutdown stats (total=0, active=0, idle=0, waiting=0)
+2024-12-26 00:26:32 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource trace_id= span_id= - order-service-pool - Shutdown completed.

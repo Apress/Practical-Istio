@@ -1,0 +1,74 @@
+# Deployment for the payment service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service
+  namespace: ecommerce
+  labels:
+    app: payment-service
+    version: v1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-service
+      version: v1 
+  template:
+    metadata:
+      labels:
+        app: payment-service
+        version: v1 
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8082"
+        proxy.istio.io/config: |
+          tracing:
+            sampling: 100
+            customTags:
+              service_type:
+                literal:
+                  value: "payment-processing"
+              payment_version:
+                environment:
+                  name: PAYMENT_VERSION
+                  defaultValue: "2.3.0"
+    spec:
+      serviceAccountName: payment-service
+      containers:
+        - name: payment-service
+          image: prashanthchaitanya715/payment-service:2.0.5
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8082
+          env:
+            - name: JAVA_OPTS
+              value: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=75 -XX:+UseG1GC"
+            - name: SPRING_PROFILES_ACTIVE
+              value: "kubernetes"
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8082
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8082
+            initialDelaySeconds: 60
+            periodSeconds: 15
+            timeoutSeconds: 5
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+            - name: logs-volume
+              mountPath: /app/logs
+      volumes:
+        - name: config-volume
+          configMap:
+            name: payment-service-config
+        - name: logs-volume
+          emptyDir: {}

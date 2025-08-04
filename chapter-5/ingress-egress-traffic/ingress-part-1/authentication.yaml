@@ -1,0 +1,17 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthenticationPolicy
+metadata:
+  name: api-auth-policy
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: api-service
+  peers:
+  - mtls:
+      mode: STRICT
+  origins:
+  - jwt:
+      issuer: "https://accounts.example.com"
+      jwksUri: "https://accounts.example.com/.well-known/jwks.json"
+  principalBinding: USE_ORIGIN

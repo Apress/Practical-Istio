@@ -1,0 +1,25 @@
+{
+    "title": "E-commerce Business Metrics",
+    "panels": [
+        {
+            "title": "Order Success Rate",
+            "type": "gauge",
+            "datasource": "Prometheus",
+            "targets": [
+                {
+                    "expr": "sum(rate(order_status_total{status=\"COMPLETED\"}[5m])) / sum(rate(order_status_total{status=~\"COMPLETED|FAILED\"}[5m])) * 100"
+                }
+            ]
+        },
+        {
+            "title": "Payment Processing Rate",
+            "type": "timeseries",
+            "datasource": "Prometheus",
+            "targets": [
+                {
+                    "expr": "sum(rate(payment_processing_time_seconds_count[5m])) by (status)"
+                }
+            ]
+        }
+    ]
+}

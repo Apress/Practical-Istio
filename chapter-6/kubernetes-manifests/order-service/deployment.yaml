@@ -1,0 +1,63 @@
+# Deployment for the order service
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+  namespace: ecommerce
+  labels:
+    app: order-service
+    version: v1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-service
+      version: v1 
+  template:
+    metadata:
+      labels:
+        app: order-service
+        version: v1 
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8080"
+    spec:
+      serviceAccountName: order-service
+      containers:
+        - name: order-service
+          image: prashanthchaitanya715/order-service:2.0.5
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: JAVA_OPTS
+              value: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=75 -XX:+UseG1GC"
+            - name: SPRING_PROFILES_ACTIVE
+              value: "kubernetes"
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 15
+            timeoutSeconds: 5
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app/config
+            - name: logs-volume
+              mountPath: /app/logs
+      volumes:
+        - name: config-volume
+          configMap:
+            name: order-service-config
+        - name: logs-volume
+          emptyDir: {}

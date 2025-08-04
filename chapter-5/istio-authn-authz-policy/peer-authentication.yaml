@@ -1,0 +1,9 @@
+# peer-authentication.yaml
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: demo
+spec:
+  mtls:
+    mode: STRICT

@@ -1,0 +1,21 @@
+# Service for exposing the inventory service
+apiVersion: v1
+kind: Service
+metadata:
+  name: inventory-service
+  namespace: ecommerce
+  labels:
+    app: inventory-service
+    service: inventory-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/path: "/actuator/prometheus"
+    prometheus.io/port: "8081"
+spec:
+  ports:
+    - name: http
+      port: 8081
+      targetPort: 8081
+      protocol: TCP
+  selector:
+    app: inventory-service

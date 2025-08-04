@@ -1,0 +1,24 @@
+# frontend-authorization.yaml
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: frontend-policy
+  namespace: demo
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  rules:
+    - from:
+        - source:
+            requestPrincipals: ["*"]
+      to:
+        - operation:
+            methods: ["GET"]
+            paths: ["/public/*"]
+    - from:
+        - source:
+            requestPrincipals: ["accounts.google.com/admin@example.com"]
+      to:
+        - operation:
+            methods: ["POST", "PUT", "DELETE"]

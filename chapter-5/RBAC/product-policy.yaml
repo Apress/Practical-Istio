@@ -1,0 +1,24 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: product-service-policy
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: product-service
+  rules:
+    - from:
+        - source:
+            principals: ["cluster.local/ns/ecommerce/sa/order-service"]
+      to:
+        - operation:
+            methods: ["GET"]
+            paths: ["/api/products/*"]
+    - from:
+        - source:
+            principals: ["cluster.local/ns/ecommerce/sa/analytics-service"]
+      to:
+        - operation:
+            methods: ["GET"]
+            paths: ["/api/products/stats"]

@@ -1,0 +1,11 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: access-logging
+  namespace: istio-system
+spec:
+  accessLogging:
+  - providers:
+    - name: envoy
+    filters:
+    - expression: "response.code >= 400 || request.headers['x-custom-header'] == 'audit'"

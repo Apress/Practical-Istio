@@ -1,0 +1,41 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: backend-service-cert
+  namespace: mtls-demo
+spec:
+  secretName: backend-service-tls
+  duration: 2160h # 90 days
+  renewBefore: 360h # 15 days
+  subject:
+    organizations:
+      - Example Inc.
+  commonName: backend-service.mtls-demo.svc
+  dnsNames:
+    - backend-service
+    - backend-service.mtls-demo.svc
+    - backend-service.mtls-demo.svc.cluster.local
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: frontend-service-cert
+  namespace: mtls-demo
+spec:
+  secretName: frontend-service-tls
+  duration: 2160h
+  renewBefore: 360h
+  subject:
+    organizations:
+      - Example Inc.
+  commonName: frontend-service.mtls-demo.svc
+  dnsNames:
+    - frontend-service
+    - frontend-service.mtls-demo.svc
+    - frontend-service.mtls-demo.svc.cluster.local
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer

@@ -1,0 +1,163 @@
+# ConfigMap for application configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-service-config
+  namespace: ecommerce
+data:
+  application.yml: |
+    spring:
+      application:
+        name: inventory-service
+
+      # Database Configuration
+      datasource:
+        url: jdbc:h2:mem:inventorydb
+        username: sa
+        password: password
+        driver-class-name: org.h2.Driver
+
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+        properties:
+          hibernate:
+            format_sql: true
+            dialect: org.hibernate.dialect.H2Dialect
+        open-in-view: false
+
+      # H2 Console Configuration
+      h2:
+        console:
+          enabled: true
+          path: /h2-console
+          settings:
+            web-allow-others: true
+
+      # Cache Configuration
+      cache:
+        type: caffeine
+        caffeine:
+          spec: maximumSize=500,expireAfterWrite=5m
+
+    # Server Configuration
+    server:
+      port: 8081  # Different from inventory-service
+      shutdown: graceful
+      tomcat:
+        threads:
+          max: 200
+        max-connections: 10000
+        accept-count: 100
+
+    # Actuator Configuration
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: health,metrics,prometheus,info,caches
+          base-path: /actuator
+      endpoint:
+        health:
+          show-details: always
+          probes:
+            enabled: true
+          group:
+            readiness:
+              include: db,diskSpace
+            liveness:
+              include: ping
+        metrics:
+          enabled: true
+        prometheus:
+          enabled: true
+      metrics:
+        tags:
+          application: ${spring.application.name}
+        distribution:
+          percentiles-histogram:
+            http.server.requests: true
+          sla:
+            http.server.requests: 50ms,100ms,200ms,500ms
+        enable:
+          jvm: true
+          process: true
+          system: true
+          logback: true
+          tomcat: true
+
+    # Logging Configuration
+    logging:
+      pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} trace_id=%X{traceId} span_id=%X{spanId} - %msg%n"
+      level:
+        root: INFO
+        com.example.istio.inventory: DEBUG
+        org.springframework.web: INFO
+        org.hibernate: INFO
+        org.springframework.cache: DEBUG
+
+    # OpenTelemetry Configuration
+    otel:
+      exporter:
+        otlp:
+          endpoint: http://jaeger-collector.istio-observability.svc.cluster.local:4317
+      traces:
+        sampler:
+          probability: 1.0
+      resource:
+        attributes:
+          deployment.environment: ${ENVIRONMENT:production}
+          service.namespace: ecommerce
+          service.name: ${spring.application.name}
+
+    # Resilience4j Configuration
+    resilience4j:
+      circuitbreaker:
+        instances:
+          default:
+            failureRateThreshold: 50
+            waitDurationInOpenState: 20s
+            slidingWindowSize: 10
+      ratelimiter:
+        instances:
+          default:
+            limitForPeriod: 100
+            limitRefreshPeriod: 1s
+            timeoutDuration: 2s
+      bulkhead:
+        instances:
+          default:
+            maxConcurrentCalls: 20
+
+    # Custom Inventory Service Configuration
+    inventory:
+      # Thresholds for inventory management
+      lowStock:
+        threshold: 10
+        alertEnabled: true
+      reorder:
+        threshold: 5
+        automaticEnabled: false
+      cache:
+        ttl: 300  # 5 minutes in seconds
+        maxSize: 1000
+      metrics:
+        enableDetailedTracking: true
+        stockLevelReportingInterval: 300  # 5 minutes
+      validation:
+        maxAdjustmentSize: 1000
+        enableStrictValidation: true
+
+    # Istio Configuration
+    istio:
+      metadata:
+        namespace: default
+        labels:
+          app: inventory-service
+          version: v1
+      monitoring:
+        port: 15014
+        metrics:
+          enabled: true

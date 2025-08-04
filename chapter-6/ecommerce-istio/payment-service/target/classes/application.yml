@@ -1,0 +1,82 @@
+spring:
+  application:
+    name: payment-service
+
+  # Database Configuration
+  datasource:
+    url: jdbc:h2:mem:paymentdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# Server Configuration
+server:
+  port: 8082
+  shutdown: graceful
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus,info
+  # Health Check Configuration
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+      group:
+        readiness:
+          include: db,diskSpace
+        liveness:
+          include: ping
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  # Metrics Configuration
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      sla:
+        http.server.requests: 50ms, 100ms, 200ms, 500ms
+
+# Logging Configuration
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} trace_id=%X{traceId} span_id=%X{spanId} - %msg%n"
+  level:
+    root: INFO
+    com.example.istio.payment: DEBUG
+    org.springframework.web: INFO
+
+# OpenTelemetry Configuration
+otel:
+  exporter:
+    otlp:
+      endpoint: http://jaeger-collector.istio-observability.svc.cluster.local:4317
+  traces:
+    sampler:
+      probability: 1.0
+  resource:
+    attributes:
+      deployment.environment: ${ENVIRONMENT:production}
+      service.namespace: ecommerce
+      service.name: ${spring.application.name}

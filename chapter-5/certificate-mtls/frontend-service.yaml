@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: frontend-service
+  namespace: mtls-demo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: mtls-demo
+  labels:
+    app: frontend-service
+spec:
+  ports:
+    - port: 80
+      name: http
+  selector:
+    app: frontend-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-service
+  namespace: mtls-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-service
+  template:
+    metadata:
+      labels:
+        app: frontend-service
+    spec:
+      serviceAccountName: frontend-service
+      containers:
+        - name: frontend
+          image: nginx:1.21
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: cert
+              mountPath: /etc/certs
+              readOnly: true
+      volumes:
+        - name: cert
+          secret:
+            secretName: frontend-service-tls

@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-service
+  namespace: ecommerce
+spec:
+  selector:
+    app: product-service
+  ports:
+    - port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  namespace: ecommerce
+spec:
+  selector:
+    app: order-service
+  ports:
+    - port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: analytics-service
+  namespace: ecommerce
+spec:
+  selector:
+    app: analytics-service
+  ports:
+    - port: 8080
+      targetPort: 8080

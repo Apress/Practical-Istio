@@ -1,0 +1,25 @@
+{
+    "title": "Inventory Health Dashboard",
+    "panels": [
+      {
+        "title": "Low Stock Items",
+        "type": "table",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "inventory_lowStock"
+          }
+        ]
+      },
+      {
+        "title": "Inventory Request Rate",
+        "type": "heatmap",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(inventory_check_time_seconds_count[5m])"
+          }
+        ]
+      }
+    ]
+  }

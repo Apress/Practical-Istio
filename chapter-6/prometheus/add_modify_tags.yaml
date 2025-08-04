@@ -1,0 +1,46 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: inventory-metrics
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: inventory-service
+  metrics:
+    - providers:
+      - name: prometheus
+      overrides:
+      - match:
+          metric: REQUEST_COUNT
+          mode: CLIENT_AND_SERVER
+        tagOverrides:
+          response_code:
+            value: "response.code"
+          inventory_status:
+            value: "response.headers['x-inventory-status']"
+          category:
+            value: "response.headers['x-product-category']"
+---
+
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: payment-metrics
+  namespace: ecommerce
+spec:
+  selector:
+    matchLabels:
+      app: payment-service
+  metrics:
+  - providers:
+    - name: prometheus
+    overrides:
+    - match:
+        metric: REQUEST_COUNT
+        mode: CLIENT_AND_SERVER
+      tagOverrides:
+        payment_status:
+          value: "response.headers['x-payment-status']"
+        payment_method:
+          value: "request.headers['x-payment-method']"

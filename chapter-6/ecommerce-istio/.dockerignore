@@ -1,0 +1,17 @@
+# Maven
+target/
+**/target/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Misc
+.git/
+.gitignore
+README.md
