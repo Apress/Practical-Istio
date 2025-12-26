@@ -1,0 +1,15 @@
+{
+  "name": "ecommerce-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for e-commerce application with Istio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "",
+  "license": "MIT"
+}
+

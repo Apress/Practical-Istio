@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "description": "High-performance laptop with 16GB RAM",
+    "price": 999.99
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "description": "Latest model with 128GB storage",
+    "price": 699.99
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "description": "Noise-cancelling wireless headphones",
+    "price": 199.99
+  }
+]
